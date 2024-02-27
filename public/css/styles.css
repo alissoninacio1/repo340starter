@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --white-color: white;
+  --Roboto: "Roboto", sans-serif;
+
+}
+
 
 /* Mobile version */
 
@@ -20,8 +26,7 @@
   #top-header {
     display: flex;
     justify-content: space-between;
-
-    background-color: white;
+    background-color: var(--white-color);
     padding: 0.2rem;
     height: 10vh;
   }
@@ -35,7 +40,7 @@
     align-self: center;
   }
   #top-header .siteName a {
-    font-family: "Roboto", sans-serif; 
+    font-family: var(--Roboto); 
     color: black;
     font-weight: 500;
     font-size: 1.6rem;
@@ -48,8 +53,26 @@
     color: black;
     font-size: 0.8rem;
     font-variant: small-caps;
-    font-family: "Roboto", sans-serif; 
+    font-family: var(--Roboto); 
   }
 
   /* NAVIGATION */
+   nav ul {
+    background-color: #2b2929;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+   }
+   nav ul li {
+    list-style-type: none;
+    color: var(--white-color);
+    font-family: var(--Roboto);
+    font-weight: 500;
+  }
+
+  /* FOOTER */
+  footer p {
+    font-family: var(--Roboto);
+  }
 }
