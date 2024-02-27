@@ -1,6 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 /******* Change Box Model ***************/
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+
+/* Mobile version */
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: #15f2f2;
+    /* the color needs to be white */
+  }
+
+  /* HEADER  */
+  #top-header {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: white;
+    padding: 0.2rem;
+    height: 10vh;
+  }
+
+
+  #top-header  a {
+    text-decoration: none;
+  }
+
+  .siteName {
+    align-self: center;
+  }
+  #top-header .siteName a {
+    font-family: "Roboto", sans-serif; 
+    color: black;
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+
+  #tools {
+    align-self: flex-start;
+  }
+  #top-header #tools a {
+    color: black;
+    font-size: 0.8rem;
+    font-variant: small-caps;
+    font-family: "Roboto", sans-serif; 
+  }
+
+  /* NAVIGATION */
 }
