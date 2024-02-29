@@ -9,6 +9,7 @@
 
 :root {
   --white-color: white;
+  --blue-color: #03b8cd;
   --Roboto: "Roboto", sans-serif;
 
 }
@@ -18,9 +19,7 @@
 
 @media only screen and (max-width: 600px) {
   body {
-    /* background-color: #15f2f2; */
     background-color: var(--white-color);
-    /* height - 100vh */
   }
 
   /* HEADER  */
@@ -62,18 +61,80 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-
    }
    nav ul li {
     list-style-type: none;
+    font-size: 1rem;
     color: var(--white-color);
     font-family: var(--Roboto);
     font-weight: 500;
+  }
+
+  /* --MAIN-- */
+
+  section h3 {
+    font-weight: 700;
+  }
+
+  section #car-ad {
+    position: relative;
+  }
+
+  section #car-info {
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    top:0;
+    color: var(--blue-color);
+  }
+
+  section #car-info h4 {
+    margin-block: 0;
+    font-weight: 800;
+  }
+
+  section #car-info ul {
+    margin-block: 0;
+  }
+
+  section #car-info ul li {
+    list-style-type: none;
+    margin-left: -2.5rem;
+    font-size: 0.75rem;
+    font-family: var(--Roboto);
+    color: var(--blue-color);
+  }
+
+  section #car-info  #button-ad {
+    background-color: var(--blue-color) ;
+    font-family: var(--Roboto);
+    font-weight: bold;
+    font-size: 0.70rem;
+    padding: 0.5rem;
+    border: none;
+    width: 80%;
+  }
+
+  section #car-info  #button-ad:hover {
+    opacity: 0.8;
+    transition: all 0.2s;
+  }
+  
+
+  section  #main-car {
+   background-color: white;
+   display: flex;
+   justify-content: center;
+  }
+
+  #main-car #portal-car {  
+    height: 75%;
+    width: 75%;  
   }
 
   /* FOOTER */
   footer p {
     font-family: var(--Roboto);
     font-weight: 500;
+    font-size: 0.8rem;
   }
 }
