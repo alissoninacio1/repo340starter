@@ -17,7 +17,7 @@
 
 /* Mobile version */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
   body {
     background-color: var(--white-color);
   }
@@ -150,12 +150,47 @@
     font-weight: 500;
   }
 
+  /* main upgrades */
+  #mechanics #content-car {
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: space-evenly;
+    max-width: 20rem;
+    text-align: center;
+ 
+  }
+
+  #mechanics #content-car .img-container{
+    background-color: #03b8cd;
+    width: 9rem;
+    padding: 0.6rem;
+   }
+
+   .card-car {
+    margin-bottom: 0.6rem;
+    font-family: var(--Roboto);
+    font-size: 0.8rem;
+   }
+
+   .img-card {
+    max-height: 3.5rem;
+    margin-bottom: -0.25rem;
+   }
+
 
 
   /* FOOTER */
   footer p {
     font-family: var(--Roboto);
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  body {
+    background-color: blueviolet;
   }
 }
