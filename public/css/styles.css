@@ -156,7 +156,7 @@
     margin-top: 1.5rem;
   }
 
-  #content #content-car li {
+  #content .content-car li {
     margin-left: -1.25rem;
     font-family: var(--Roboto);
     font-size: 0.75rem;
@@ -165,7 +165,7 @@
   }
 
   /* main upgrades */
-  #mechanics #content-car {
+  #mechanics .content-car {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
@@ -175,7 +175,7 @@
  
   }
 
-  #mechanics #content-car .img-container{
+  #mechanics .content-car .img-container{
     background-color: var(--blue-color);
     width: 9rem;
     padding: 0.6rem;
@@ -292,13 +292,13 @@
     margin-top: 0rem;
   }
 
-  #mechanics #content-car {
+  #mechanics .content-car {
     display: flex;
     flex-wrap: wrap;
 
   }
 
-  #content-car li {
+  #mechanics .content-car li {
     padding: 0.35rem;
   }
 
@@ -318,6 +318,10 @@
 
   #button-ad {
     margin-left: -0.5rem;
+  }
+
+  #content .content-car li {
+    padding: 0.25rem;
   }
 
 
