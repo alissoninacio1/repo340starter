@@ -70,10 +70,15 @@
     font-weight: 500;
   }
 
+  nav ul li:hover {
+    color: #c9c9c9;
+    transition: all 0.2s;
+  }
+
   /* --MAIN-- */
 
-  section h3 {
-    font-weight: 700;
+  .subtitle {
+    font-weight: 800;
   }
 
   section #car-ad {
@@ -90,6 +95,7 @@
   section #car-info h4 {
     margin-block: 0;
     font-weight: 800;
+    font-family: serif
   }
 
   section #car-info ul {
@@ -102,6 +108,7 @@
     font-size: 0.75rem;
     font-family: var(--Roboto);
     color: var(--blue-color);
+    font-weight: 500;
   }
 
   section #car-info  #button-ad {
@@ -130,6 +137,20 @@
     height: 75%;
     width: 75%;  
   }
+
+  #reviews {
+    margin-top: 1.5rem;
+  }
+
+  #content #content-car li {
+    margin-left: -1.25rem;
+    font-family: var(--Roboto);
+    font-size: 0.75rem;
+    margin-block: 1rem;
+    font-weight: 500;
+  }
+
+
 
   /* FOOTER */
   footer p {
