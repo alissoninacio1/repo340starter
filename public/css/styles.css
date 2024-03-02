@@ -17,7 +17,7 @@
 
 /* Mobile version */
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1820px) {
   html {
     display: flex;
     flex-direction: column;
@@ -132,6 +132,7 @@
     padding: 0.5rem;
     border: none;
     width: 80%;
+    border: solid 1px #c1c1c1;
   }
 
   section #car-info  #button-ad:hover {
@@ -231,8 +232,97 @@
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 650px) {
+
+  
+  html {
+    background-image: url("/images/site/small_check.jpg");
+    font-size: 110%;
+  }
   body {
-    background-color: blueviolet;
+    
+    border:  solid var(--blue-color) 0.2rem;
+    border-radius: 0.5rem;
+    max-width: 516px;
+    margin-inline: auto;
+    margin-block: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  #car-info h4 {
+    margin-left: -0.2rem;
+  }
+
+  #car-info ul li {
+    margin-left: -2rem;
+  }
+
+  #button-ad {
+    margin-left: -0.35rem;
+  }
+
+
+}
+
+@media only screen and (min-width: 860px) {
+  html {
+    font-size: 110%;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+  html {
+    font-size: 150%;
+  }
+
+  body {
+    max-width: 1000px;
+    padding: 1rem;
+  } 
+
+  #description {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+
+  #reviews {
+    margin-top: 0rem;
+  }
+
+  #mechanics #content-car {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  #content-car li {
+    padding: 0.35rem;
+  }
+
+
+
+  #car-info {
+    padding: 1rem;
+  }
+
+  #car-info h4 {
+    margin-left: -0.5rem;
+  }
+
+  #car-info ul li{
+    margin-left: -2rem !important;
+  }
+
+  #button-ad {
+    margin-left: -0.5rem;
+  }
+
+
+  footer p {
+    margin-bottom: -1rem;
   }
 }
+
