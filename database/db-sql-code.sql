@@ -4,7 +4,7 @@ CREATE TYPE public.account_type AS ENUM
     ('Client', 'Employee', 'Admin');
 
 ALTER TYPE public.account_type
-    OWNER TO cse340;
+    OWNER TO cse340aoi;
 
 
 -- Table.structure for table `classification`
@@ -245,3 +245,18 @@ VALUES   (
     'White',
     5
   );
+
+
+-- Modify the "GM Hummer" record to read "a huge interior" rather than "small interiors" using a single query. 
+UPDATE public.inventory
+SET inv_description = REPLACE(inv_description, 'the small interiors', 'a huge interior')
+WHERE inv_make = 'GM' AND inv_model = 'Hummer';
+
+
+  -- Update all records in the inventory table to add "/vehicles" to the middle of the file path in the inv_image
+-- and inv_thumbnail columns using a single query. 
+-- When done the path for both inv_image and inv_thumbnail should resemble this example: /images/vehicles/a-car-name.jpg
+UPDATE public.inventory
+SET 
+    inv_image = REPLACE(inv_image, '/images/', '/images/vehicles/'),
+    inv_thumbnail = REPLACE(inv_thumbnail, '/images/', '/images/vehicles/');
