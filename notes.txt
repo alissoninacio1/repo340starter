@@ -1,2 +1,5 @@
 //POSTGRES DOCUMENTATION
     https://node-postgres.com/
+
+
+    --> Pool" functionality from the "pg" package. A pool is a collection of connection objects (10 is the default number) that allow multiple site visitors to be interacting with the database at any given time. This keeps you from having to create a separate connection for each interaction.
