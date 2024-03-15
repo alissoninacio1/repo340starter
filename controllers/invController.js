@@ -28,9 +28,9 @@ invCont.buildViewVehicleDetail = async (req, res) => {
     const vehicle_id = req.params.id;
     const data = await invModel.retrieveVehicleDataById(vehicle_id);
 
-    const grid = await Util.buildVehicleDetailview(data);
+    const grid = await utilities.buildVehicleDetailView(data); // Updated method name
 
-    let nav = await Util.getNavigation();
+    let nav = await utilities.getNav();
 
     if (data.length > 0) {
       const vehicleTitle = `${data[0].inv_make} ${data[0].inv_model}`;
