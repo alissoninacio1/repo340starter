@@ -28,5 +28,27 @@ async function getInventoryByClassificationId(classification_id) {
 }
 
 
+// Query Purpose: Retrieve vehicle data by inv_id.
+async function retrieveVehicleDataById(inv_id) {
+  try {
+    const selectQuery = `
+    SELECT * FROM public.inventory AS i
+    JOIN public.vehicle_status as v_s
+    ON i.inv_id = v_s.inv_id
+    WHERE i.inv_id = $1
+  `;
 
-module.exports = {getClassifications, getInventoryByClassificationId};
+    const data = await pool.query(selectQuery, [inv_id]);
+
+    return data.rows;
+  } catch (error) {
+    console.error("retrieveVehicleDataById " + error)
+  }
+}
+
+
+module.exports = {
+                    getClassifications, 
+                    getInventoryByClassificationId,
+                    retrieveVehicleDataById
+                  };
