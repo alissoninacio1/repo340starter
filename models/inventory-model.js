@@ -32,10 +32,17 @@ async function getInventoryByClassificationId(classification_id) {
 async function retrieveVehicleDataById(inv_id) {
   try {
     const selectQuery = `
-    SELECT * FROM public.inventory AS i
-    JOIN public.vehicle_status as v_s
-    ON i.inv_id = v_s.inv_id
-    WHERE i.inv_id = $1
+      SELECT
+          inv_make,
+          inv_model,
+          inv_year,
+          inv_image,
+          inv_price,
+          inv_miles
+      FROM
+          public.inventory
+      WHERE
+          inv_id = $1;
   `;
 
     const data = await pool.query(selectQuery, [inv_id]);
