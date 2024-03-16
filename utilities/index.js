@@ -80,10 +80,10 @@ Util.buildVehicleDetailView = async function(data) {
           grid += '</div>';          
           grid += `<div class="vehicle-detail-card__text">`
           grid += `<h2>${vehicle.inv_make} ${vehicle.inv_model} Details</h2>`; 
-          grid += `<p>Price: $${new Intl.NumberFormat('en-US').format(vehicle.inv_price)}</p>`;
-          grid += `<p>Description: ${vehicle.inv_description}</p>`; 
-          grid += `<p>Color: ${vehicle.inv_color}</p>`; 
-          grid += `<p>Mileage: ${new Intl.NumberFormat('en-US').format(vehicle.inv_miles)}</p>`;
+          grid += `<p><span>Price:</span> $${new Intl.NumberFormat('en-US').format(vehicle.inv_price)}</p>`;
+          grid += `<p><span>Description:</span> ${vehicle.inv_description}</p>`; 
+          grid += `<p><span>Color:</span> ${vehicle.inv_color}</p>`; 
+          grid += `<p><span>Mileage:</span> ${new Intl.NumberFormat('en-US').format(vehicle.inv_miles)}</p>`;
           grid += `</div>`; 
           grid += `</div>`;
           grid += '</div>'; 
