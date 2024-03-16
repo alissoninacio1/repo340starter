@@ -309,7 +309,31 @@
     background-color: #e7e7e7;
   }
 
-}
+  /* ERROR */
+
+  .content__heading__title {
+    font-family: var(--Roboto);
+  }
+
+
+  .errorMessage {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: var(--Roboto);
+  }
+
+  .error_image {
+    margin: auto;
+    background-image: url(../images/vehicles/no-image.png);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 300px;
+    width: 300px;
+  }
+
+
 
 /* -responsivity of the absolute element car-info */
 @media only screen and (min-width: 390px) {
