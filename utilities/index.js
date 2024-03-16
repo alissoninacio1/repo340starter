@@ -66,6 +66,7 @@ Util.buildClassificationGrid = async function(data){
 
 // Prupose: builds the vehicle detail view  
 
+
 Util.buildVehicleDetailView = async function(data) {
   let grid = '';
 
@@ -78,10 +79,10 @@ Util.buildVehicleDetailView = async function(data) {
           grid += `<img src="${vehicle.inv_image}" alt="${vehicle.inv_make} ${vehicle.inv_model}" class="vehicle-detail-card__image">`;
           grid += '</div>';          
           grid += `<div class="vehicle-detail-card__text">`
-          grid += `<p>Make: ${vehicle.inv_make}</p>`;
-          grid += `<p>Model: ${vehicle.inv_model}</p>`;
-          grid += `<p>Year: ${vehicle.inv_year}</p>`;
+          grid += `<h2>${vehicle.inv_make} ${vehicle.inv_model} Details</h2>`; 
           grid += `<p>Price: $${new Intl.NumberFormat('en-US').format(vehicle.inv_price)}</p>`;
+          grid += `<p>Description: ${vehicle.inv_description}</p>`; 
+          grid += `<p>Color: ${vehicle.inv_color}</p>`; 
           grid += `<p>Mileage: ${new Intl.NumberFormat('en-US').format(vehicle.inv_miles)}</p>`;
           grid += `</div>`; 
           grid += `</div>`;

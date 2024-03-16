@@ -32,17 +32,19 @@ async function getInventoryByClassificationId(classification_id) {
 async function retrieveVehicleDataById(inv_id) {
   try {
     const selectQuery = `
-      SELECT
-          inv_make,
-          inv_model,
-          inv_year,
-          inv_image,
-          inv_price,
-          inv_miles
-      FROM
-          public.inventory
-      WHERE
-          inv_id = $1;
+    SELECT
+      inv_make,
+      inv_model,
+      inv_year,
+      inv_image,
+      inv_price,
+      inv_description, -- Adicionando a descrição
+      inv_color, -- Adicionando a cor
+      inv_miles
+    FROM
+        public.inventory
+    WHERE
+        inv_id = $1;
   `;
 
     const data = await pool.query(selectQuery, [inv_id]);
@@ -52,6 +54,8 @@ async function retrieveVehicleDataById(inv_id) {
     console.error("retrieveVehicleDataById " + error)
   }
 }
+
+
 
 
 module.exports = {

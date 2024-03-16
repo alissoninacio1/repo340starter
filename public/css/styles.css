@@ -418,6 +418,31 @@
   }
 
 
+  /* TOOLS */
+
+  #wrapper h1 {
+    font-size: 1.3rem;
+    font-family: var(--Roboto);
+  }
+
+  .vehicle-detail-card__container .vehicle-detail-card__content {
+    background-color: #03b8cd;
+    display: flex;
+    gap: 0.2rem;
+  }
+
+  .vehicle-detail-card__container .vehicle-detail-card__image-container  {
+    padding: 1rem;
+  }
+
+  .vehicle-detail-card__container .vehicle-detail-card__image-container img {
+    width: 15rem;
+  }
+
+  .vehicle-detail-card__content .vehicle-detail-card__text {
+    background-color: bisque;
+    padding: ;
+  }
 
 
 }
