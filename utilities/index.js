@@ -65,8 +65,6 @@ Util.buildClassificationGrid = async function(data){
 
 
 // Prupose: builds the vehicle detail view  
-
-
 Util.buildVehicleDetailView = async function(data) {
   let grid = '';
 
