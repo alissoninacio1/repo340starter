@@ -65,32 +65,6 @@ Util.buildClassificationGrid = async function(data){
 
 
 // Prupose: builds the vehicle detail view  
-// Util.buildVehicleDetailView = async function(data) {
-//   let grid = '';
-
-//   if (data.length > 0) {
-//       data.forEach(vehicle => {
-    
-//           grid += '<div class="vehicle-detail-card__container">'; 
-//           grid += `<div class="vehicle-detail-card__content">` 
-//           grid += `<div class="vehicle-detail-card__image-container">` 
-//           grid += `<img src=" ${vehicle.inv_image}" alt="${vehicle.inv_make} ${vehicle.inv_model}" class="vehicle-detail-card__image">`;
-//           grid += '</div>';          
-//           grid += `<div class="vehicle-detail-card__text">`
-//           grid += `<p>Availability: ${vehicle.vehicle_status_type}</p>`;
-//           grid += `<p>Year: ${vehicle.inv_year}</p>`;
-//           grid += `<p>Price: $${new Intl.NumberFormat('en-US').format(vehicle.inv_price)}</p>`;
-//           grid += `<p>Mileage: ${new Intl.NumberFormat('en-US').format(vehicle.inv_miles)}</p>`;
-//           grid += `</div>`; 
-//           grid += `</div>`;
-//           grid += '</div>'; 
-//       });
-//   } else {
-//       grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>';
-//   }
-
-//   return grid;
-// };
 
 Util.buildVehicleDetailView = async function(data) {
   let grid = '';

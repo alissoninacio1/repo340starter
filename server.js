@@ -41,7 +41,7 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", inventoryRoute)
 
 // Route to get inventory item detail view
-app.get('/inv/detail/:id', inventoryRoute.buildViewVehicleDetail);
+app.get('/inv/detail/:id', utilities.handleErrors(inventoryRoute.buildViewVehicleDetail));
 
 
 // File Not Found Route - must be last route in list
