@@ -22,7 +22,10 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    padding: 0.4rem;
   }
+
+
 
   body {
     background-color: var(--white-color);
@@ -70,7 +73,7 @@
     background-color: #2b2929;
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0.35rem;
    }
 
    nav ul li {
@@ -291,6 +294,10 @@
     padding: 1rem;
   } 
 
+  nav ul {
+    padding: 0.8rem;
+  }
+
   #description {
     display: flex;
     flex-direction: row-reverse;
@@ -337,6 +344,77 @@
   footer p {
     margin-bottom: -1rem;
   }
+
+
+
+  /* CUSTOM VEHICLES */
+
+  #wrapper {
+    width: 900px;
+  }
+
+
+  #classification-container #classification-title h1 {
+    font-family: var(--Roboto);
+    font-size: 1.35rem;
+  }
+
+  #classification-container #classification-data {
+    text-align: center;
+  }
+
+  #classification-data #inv-display  {
+    display: flex;
+    column-gap: 1.75rem;
+    row-gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -1.5rem;
+  }
+
+  #classification-data #inv-display  li {
+    list-style: none;
+    border: solid 0.5px grey;
+    width: 10.5rem;
+    border-radius: 0.6rem;
+    height: 13rem;
+  }
+
+  #classification-data #inv-display  li:hover {
+    transition: all 0.2s;
+    opacity: 0.9;
+    transform: scale(1.01);
+  }
+
+
+  #classification-data #inv-display  li div hr {
+    height: 0.3rem;
+    background-color: black;
+  }
+
+  #classification-data #inv-display  li a img {
+    width: 100%;
+    height: 50%;
+    border-radius: 0.6rem;
+  }
+
+  #classification-data #inv-display  li .namePrice {
+
+  }
+
+
+  #classification-data #inv-display  li .namePrice h2 {
+    font-family: var(--Roboto);
+    font-size: 0.8rem;
+  }
+
+  #classification-data #inv-display  li .namePrice span {
+    background-color: #03b8cd;
+    font-size: 0.8rem;
+  }
+
+
+
 }
 
 
