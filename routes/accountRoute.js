@@ -8,4 +8,8 @@ const accountController = require("../controllers/accountController");
 // Route to deliver login view
 router.get("/login", utilities.handleErrors(accountController.buildLogin));
 
+// Route to deliver registration view
+router.get("/signup", utilities.handleErrors(accountController.buildRegistration));
+
+
 module.exports = router;
