@@ -1,14 +1,7 @@
 <div id="registration-body">
     <div class="container">
-        <h1 class="form-title"><%= title %></h1>
+        <h1 class="form-title">Register</h1>
         
-        <!-- Display flash message if available -->
-        <div class="flash-message">
-            <% if (typeof flash !== 'undefined' && flash.length > 0) { %>
-                <p><%= flash %></p>
-            <% } %>
-        </div>
-
         <!-- Registration form -->
         <form class="registration-form" action="/account/register" method="post">
             <div class="form-group">
@@ -25,14 +18,16 @@
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" minlength="12" required>
+                <input type="password" id="password" name="password" minlength="12" required
+                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{12,}" 
+                       title="Password must be at least 12 characters long and contain at least one number, one uppercase letter, one lowercase letter, and one special character.">
             </div>
             <div class="form-group">
                 <button type="submit" class="registration-button">Register</button>
             </div>
         </form>
 
-        <!-- New Account signup option -->
+        <!-- Already have an account option -->
         <div id="signup-link">
             <p>Already have an account? <a href="/account/login">Login</a></p>
         </div>
