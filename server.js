@@ -20,7 +20,7 @@ const inventoryRoute = require("./routes/inventoryRoute")
 //controllers
 const baseController = require("./controllers/baseController")
 
-
+const accountRoute = require("./routes/accountRoute")
 
 /* ***********************
  * View Engine and Templates
@@ -66,6 +66,9 @@ app.use("/inv", inventoryRoute)
 
 // Route to get inventory item detail view
 app.get('/inv/detail/:id', utilities.handleErrors(inventoryRoute.buildViewVehicleDetail));
+
+app.use("/account", utilities.handleErrors(accountRoute))
+
 
 
 // File Not Found Route - must be last route in list
