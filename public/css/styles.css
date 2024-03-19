@@ -518,9 +518,9 @@
 
 #login-body {
   font-family: var(--Roboto);
-  background-color: #f4f4f4;
+  background-color: var(--blue-color);
   margin: 0;
-  padding: 0;
+  padding: 1rem;
 }
 
 .container {
@@ -583,7 +583,7 @@ input[type="password"] {
 }
 
 #signup-link a {
-  color: var(--blue-color);
+  color: var(--blue-color) !important;
   text-decoration: none;
 }
 
@@ -611,6 +611,7 @@ input[type="password"] {
   background-color: var(--blue-color); /* Blue background */
   padding: 20px;
   color: #fff; /* White text */
+  font-family: var(--Roboto);
 }
 
 .container {
@@ -659,15 +660,7 @@ input[type="password"] {
   background-color: #2c3e50; /* Darker blue on hover */
 }
 
-#signup-link {
-  margin-top: 20px;
-  text-align: center;
-}
 
-#signup-link a {
-  color: #fff; /* White link text */
-  text-decoration: none; /* Remove underline */
-}
 
 @media (max-width: 768px) {
   .container {
