@@ -478,14 +478,14 @@
   }
 
   #classification-container #classification-title h1 {
-    font-size: 1.35rem;
+    font-size: 1.1rem;
   }
 
 
   /* TOOLS */
 
   #wrapper h1 {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .vehicle-detail-card__container .vehicle-detail-card__content {
@@ -532,16 +532,18 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.title {
+.form-title {
   text-align: center;
+  font-size: 1rem !important;
 }
+
 
 .flash-message {
   margin-bottom: 15px;
-  padding: 10px;
+  padding: 5px;
   background-color: #d8d8f6;
   border: 1px solid #cec6f5;
-  border-radius: 5px;
+  border-radius: 2px;
   color: #721c24;
 }
 
@@ -556,13 +558,14 @@
 label {
   display: block;
   margin-bottom: 5px;
+  font-size: 0.6rem;
 }
 
 input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #eaeaea;
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -570,7 +573,7 @@ input[type="password"] {
 .login-button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: var(--blue-color);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -578,7 +581,7 @@ input[type="password"] {
 }
 
 .login-button:hover {
-  background-color: #0056b3;
+  opacity: 0.9;
 }
 
 #signup-link {
@@ -587,12 +590,17 @@ input[type="password"] {
 }
 
 #signup-link a {
-  color: #007bff;
+  color: var(--blue-color);
   text-decoration: none;
 }
 
 #signup-link a:hover {
   text-decoration: underline;
+}
+
+#signup-link p,
+#signup-link a {
+  font-size: 0.7rem;
 }
 
 /* Media queries for responsiveness */
