@@ -11,6 +11,7 @@
   --white-color: white;
   --blue-color: #03b8cd;
   --Roboto: "Roboto", sans-serif;
+  --button: #2980b9;
 
 }
 
@@ -563,15 +564,7 @@ input[type="password"] {
   box-sizing: border-box;
 }
 
-.login-button {
-  width: 100%;
-  padding: 10px;
-  background-color: var(--blue-color);
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+/* .login-button -  go to the buttons section */
 
 .login-button:hover {
   opacity: 0.9;
@@ -646,15 +639,7 @@ input[type="password"] {
   font-size: 16px;
 }
 
-.registration-button {
-  background-color: #2980b9; /* Blue button color */
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
+/* .registration-button  -  go to the buttons section */
 
 .registration-button:hover {
   opacity: 0.9;
@@ -671,6 +656,18 @@ input[type="password"] {
   text-decoration: none; 
 }
 
+.password-requirements {
+  font-size: 0.6rem;
+  margin-top: 5px;
+  color: #555;
+}
+
+/* #show-password-button   -  go to the buttons section*/
+
+#show-password-button:hover {
+ opacity: 0.9; 
+}
+
 @media (max-width: 768px) {
   .container {
       padding: 10px;
@@ -681,4 +678,20 @@ input[type="password"] {
   input[type="password"] {
       font-size: 14px;
   }
+}
+
+
+/* GENREAL BUTTONS */
+
+#show-password-button, 
+.registration-button,
+.login-button {
+  background-color: var(--button);
+  color: var(--white-color);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.6rem;
+  padding: 10px;
+  margin-top: 5px;
 }

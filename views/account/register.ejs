@@ -18,9 +18,11 @@
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" minlength="12" required
-                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{12,}" 
-                       title="Password must be at least 12 characters long and contain at least one number, one uppercase letter, one lowercase letter, and one special character.">
+                <input type="password" id="password" name="password" minlength="12" required>
+                <p class="password-requirements">Password must be at least 12 characters long and contain at least one number, one uppercase letter, one lowercase letter, and one special character.</p>
+            </div>
+            <div class="form-group">
+                <button type="button" id="show-password-button">Show Password</button>
             </div>
             <div class="form-group">
                 <button type="submit" class="registration-button">Register</button>
@@ -33,3 +35,6 @@
         </div>
     </div>
 </div>
+
+<script src="./btnPassword.js"></script>
+    
