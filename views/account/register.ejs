@@ -1,6 +1,15 @@
 <div id="registration-body">
     <div class="container">
         <h1 class="form-title">Register</h1>
+
+        <!-- Display Errors -->
+        <% if (errors) { %>
+            <ul class="notice">
+                <% errors.array().forEach(error => { %>
+                    <li><%= error.msg %></li>
+                <% }) %>
+            </ul>
+        <% } %>
         
         <!-- Registration form -->
         <form class="registration-form" action="/account/register" method="post">
