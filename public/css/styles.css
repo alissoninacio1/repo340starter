@@ -681,7 +681,7 @@ input[type="password"] {
 }
 
 
-/* GENREAL BUTTONS */
+/* GENREAL BUTTONS and INPUT*/
 
 #show-password-button, 
 .registration-button,
@@ -694,4 +694,14 @@ input[type="password"] {
   font-size: 0.6rem;
   padding: 10px;
   margin-top: 5px;
+}
+
+input:focus,
+input:valid  {
+  background-color: #f0f0f0; 
+}
+
+
+input:invalid {
+  background-color: #f8d7da; /
 }

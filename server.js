@@ -13,6 +13,8 @@ const static = require("./routes/static")
 const utilities = require("./utilities/")
 const session = require("express-session")
 const pool = require('./database/')
+const bodyParser = require("body-parser")
+
 //Routes
 
 const inventoryRoute = require("./routes/inventoryRoute")
@@ -53,6 +55,9 @@ app.use(function(req, res, next){
 })
 
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 /* ***********************
  * Routes
  *************************/
@@ -69,7 +74,11 @@ app.get('/inv/detail/:id', utilities.handleErrors(inventoryRoute.buildViewVehicl
 
 app.use("/account", utilities.handleErrors(accountRoute))
 
-
+// Route to render the login page
+app.get('/login', async (req, res) => {
+  // Render the login page and pass the "registered" variable with the registered username, if any
+  res.render('login', { registered: req.query.registered });
+});
 
 
 // File Not Found Route - must be last route in list
