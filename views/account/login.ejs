@@ -6,8 +6,6 @@
         <div class="flash-message">
             <% if (typeof flash !== 'undefined' && flash.length > 0) { %>
                 <p><%= flash %></p>
-            <% } else if (typeof registered !== 'undefined' && registered) { %>
-                <p>Congrats <%= registered %>, you are registered! Please login.</p>
             <% } %>
         </div>
 
