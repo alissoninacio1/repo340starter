@@ -100,4 +100,22 @@ Util.buildVehicleDetailView = async function(data) {
  **************************************** */
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
+
+
+
+
+Util.buildClassificationList = async function () {
+  try {
+    const data = await invModel.getClassifications();
+    const classificationList = data.rows.map(row => ({
+      id: row.classification_id,
+      name: row.classification_name
+    }));
+    return classificationList;
+  } catch (error) {
+    throw new Error("Error building classification list: " + error.message);
+  }
+};
+
+
 module.exports = Util
