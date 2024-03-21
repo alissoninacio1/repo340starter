@@ -1,6 +1,7 @@
 const utilities = require('../utilities');
 const accountModel = require('../models/account-model');
 
+
 /* ****************************************
 *  Deliver login view
 * *************************************** */
@@ -104,10 +105,12 @@ async function registerAccount(req, res) {
       });
     }
   } catch (error) {
-    console.error(error); // Log the full error for debugging
+    console.error(error); 
     next(error);
   }
 }
 
 
-module.exports = { buildLogin, buildRegister,registerAccount };
+
+
+module.exports = { buildLogin, buildRegister,registerAccount};
