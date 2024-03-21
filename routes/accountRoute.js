@@ -10,15 +10,19 @@ router.get("/login", utilities.handleErrors(accountController.buildLogin));
 // Route to deliver registration view
 router.get("/signup", utilities.handleErrors(accountController.buildRegister));
 
-//Route to send the fomr and register in the DB
-router.post('/register', utilities.handleErrors(accountController.registerAccount))
-
 // Process the registration data
 router.post(
     "/register",
     regValidate.registationRules(),
     regValidate.checkRegData,
     utilities.handleErrors(accountController.registerAccount)
-  )
+)
+
+router.post(
+  "/login",
+  regValidate.registationRules(),
+  regValidate.checkRegData,
+  utilities.handleErrors(accountController.registerAccount)
+)
 
 module.exports = router;

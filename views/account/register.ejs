@@ -15,19 +15,19 @@
         <form class="registration-form" action="/account/register" method="post">
             <div class="form-group">
                 <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" placeholder="Only text is allowed">
+                <input type="text" id="firstName" name="account_firstname" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" placeholder="Only text is allowed">
             </div>
             <div class="form-group">
                 <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"  placeholder="Only text is allowed">
+                <input type="text" id="lastName" name="account_lastname" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"  placeholder="Only text is allowed">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="account_email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" minlength="12" required>
+                <input type="password" id="password" name="account_password" minlength="12" required>
                 <p class="password-requirements">Password must be at least 12 characters long and contain at least one number, one uppercase letter, one lowercase letter, and one special character.</p>
             </div>
             <div class="form-group">
