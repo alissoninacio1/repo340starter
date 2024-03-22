@@ -58,4 +58,35 @@ router.get("/add-inventory", async (req, res) => {
 });
 
 
+// -------ADD CLASSIFICATION AND VEHICLES BUTTON MANAGEMENT
+// Route to handle adding a new classification
+router.post('/add-classification', async (req, res) => {
+    const { classificationName } = req.body;
+    try {
+        const newClassification = await invController.addNewClassification(classificationName);
+        // Handle success response
+        res.status(201).json(newClassification);
+    } catch (error) {
+        // Handle error response
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Route to handle adding a new vehicle
+router.post('/add-vehicle', async (req, res) => {
+    // Extract vehicle data from request body
+    const { invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors } = req.body;
+    try {
+        const newVehicle = await invController.addNewVehicle(invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors);
+        // Handle success response
+        res.status(201).json(newVehicle);
+    } catch (error) {
+        // Handle error response
+        res.status(500).json({ error: error.message });
+    }
+});
+
+router.post("/add-inventory", invController.addNewVehicle);
+
+
 module.exports = router;
