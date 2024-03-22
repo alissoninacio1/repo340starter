@@ -3,7 +3,7 @@ const router = express.Router();
 const utilities = require("../utilities");
 const regValidate = require('../utilities/account-validation')
 const accountController = require("../controllers/accountController");
-const checkIfUserExists = require("../controllers/accountController")
+
 
 const crypto = require('crypto');
 
