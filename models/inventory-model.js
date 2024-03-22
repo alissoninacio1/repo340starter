@@ -55,11 +55,27 @@ async function retrieveVehicleDataById(inv_id) {
   }
 }
 
-
+async function addNewVehicle(invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors) {
+  try {
+    const query = `
+      INSERT INTO public.inventory (inv_make, inv_model, classification_id, inv_description, inv_image, inv_thumbnail, inv_price, inv_year, inv_miles, inv_color)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+      RETURNING *;
+    `;
+    const values = [invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors];
+    const { rows } = await pool.query(query, values);
+    return rows[0];
+  } catch (error) {
+    console.error("Error adding new vehicle:", error);
+    throw error;
+  }
+}
 
 
 module.exports = {
-                    getClassifications, 
-                    getInventoryByClassificationId,
-                    retrieveVehicleDataById
-                  };
+  getClassifications, 
+  getInventoryByClassificationId,
+  retrieveVehicleDataById,
+  addNewVehicle
+};
+

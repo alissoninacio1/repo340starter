@@ -1,6 +1,6 @@
 const invModel = require("../models/inventory-model");
 const utilities = require("../utilities/");
-const db = require('../database');
+
 
 const invController = {};
 
@@ -80,13 +80,16 @@ invController.addNewVehicle = async function (req, res, next) {
 
     if (result) {
       req.flash("messages", "Vehicle added successfully.");
-      res.redirect("/inv"); // Redirect to management page
-      req.flash("errors", "Failed to add vehicle."); // Add error message if needed
+      res.redirect("/inv"); 
+    } else {
+      req.flash("errors", "Failed to add vehicle."); 
+      res.redirect("/inv/add-inventory"); 
     }
   } catch (error) {
     console.error("Error adding vehicle:", error);
     next(error); 
   }
 };
+
 
 module.exports = invController;

@@ -72,21 +72,23 @@ router.post('/add-classification', async (req, res) => {
     }
 });
 
+
 // Route to handle adding a new vehicle
 router.post('/add-vehicle', async (req, res) => {
-    // Extract vehicle data from request body
     const { invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors } = req.body;
+
+    if (!invMake || !invModel || !classification || !invDescription || !invImage || !invThumbnail || !invPrice || !invYear || !invMiles || !invColors) {
+        return res.status(400).json({ error: "All fields are required." });
+    }
     try {
         const newVehicle = await invController.addNewVehicle(invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors);
-        // Handle success response
         res.status(201).json(newVehicle);
     } catch (error) {
-        // Handle error response
         res.status(500).json({ error: error.message });
     }
 });
 
-router.post("/add-inventory", invController.addNewVehicle);
+
 
 
 module.exports = router;
