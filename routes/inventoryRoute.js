@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const invController = require("../controllers/invController");
 const utilities = require("../utilities/index")
+const inventoryModel = require('../models/inventory-model');
 
 // Route to build inventory by classification view
 router.get("/type/:classificationId", invController.buildByClassificationId);
@@ -74,17 +75,28 @@ router.post('/add-classification', async (req, res) => {
 
 
 // Route to handle adding a new vehicle
-router.post('/add-vehicle', async (req, res) => {
-    const { invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors } = req.body;
-
-    if (!invMake || !invModel || !classification || !invDescription || !invImage || !invThumbnail || !invPrice || !invYear || !invMiles || !invColors) {
-        return res.status(400).json({ error: "All fields are required." });
-    }
+router.post('/add-inventory', async (req, res, next) => {
     try {
-        const newVehicle = await invController.addNewVehicle(invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors);
-        res.status(201).json(newVehicle);
+        // Log the request body to inspect form data
+        console.log('Request Body:', req.body);
+
+        // Extract form data from request body
+        const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id } = req.body;
+
+        // Insert the new vehicle into the database
+        const result = await inventoryModel.addNewVehicle(inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id);
+
+        // Check if the insertion was successful
+        if (result) {
+            // Redirect to the inventory page or any other relevant page
+            res.redirect('/inventory');
+        } else {
+            // If insertion failed, render the form again with an error message
+            res.render('add-inventory', { errors: ['Failed to add the vehicle. Please try again.'] });
+        }
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        // Handle any errors
+        next(error);
     }
 });
 

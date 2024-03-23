@@ -59,37 +59,37 @@ invController.addNewClassification = async function (req, res, next) {
   }
 };
 
-// Function to add a new vehicle to the database
 invController.addNewVehicle = async function (req, res, next) {
   try {
-    const {
-      invMake,
-      invModel,
-      classification,
-      invDescription,
-      invImage,
-      invThumbnail,
-      invPrice,
-      invYear,
-      invMiles,
-      invColors
-    } = req.body;
+    // Extract form data from request body
+    const { invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors } = req.body;
 
-    // Call the function in the model to add a new vehicle
-    const result = await invModel.addNewVehicle(invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors);
+    // Check if invColors is provided and not empty
+    if (!invColors || invColors.trim() === '') {
+      throw new Error('Vehicle color is required');
+    }
 
+    // Insert the new vehicle into the database
+    const result = await inventoryModel.addNewVehicle(invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors);
+
+    // Check if the insertion was successful
     if (result) {
-      req.flash("messages", "Vehicle added successfully.");
-      res.redirect("/inv"); 
+      // Redirect to the inventory page or any other relevant page
+      res.redirect('/inventory');
     } else {
-      req.flash("errors", "Failed to add vehicle."); 
-      res.redirect("/inv/add-inventory"); 
+      // If insertion failed, render the form again with an error message
+      res.render('add-inventory', { errors: ['Failed to add the vehicle. Please try again.'] });
     }
   } catch (error) {
-    console.error("Error adding vehicle:", error);
-    next(error); 
+    // Handle any errors
+    if (error.message === 'Vehicle color is required') {
+      // If vehicle color is not provided, render the form again with an error message
+      res.render('add-inventory', { errors: [error.message] });
+    } else {
+      // If any other error occurs, pass it to the error handling middleware
+      next(error);
+    }
   }
 };
-
 
 module.exports = invController;

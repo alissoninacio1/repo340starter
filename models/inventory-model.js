@@ -55,16 +55,20 @@ async function retrieveVehicleDataById(inv_id) {
   }
 }
 
-async function addNewVehicle(invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors) {
+async function addNewVehicle(invMake, invModel, invYear, invDescription, invImage, invThumbnail, invPrice, invMiles, invColor, classificationId) {
   try {
     const query = `
-      INSERT INTO public.inventory (inv_make, inv_model, classification_id, inv_description, inv_image, inv_thumbnail, inv_price, inv_year, inv_miles, inv_color)
+      INSERT INTO public.inventory (
+        inv_make, inv_model, inv_year, inv_description,
+        inv_image, inv_thumbnail, inv_price, inv_miles,
+        inv_color, classification_id
+      )
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
       RETURNING *;
     `;
-    const values = [invMake, invModel, classification, invDescription, invImage, invThumbnail, invPrice, invYear, invMiles, invColors];
+    const values = [invMake, invModel, invYear, invDescription, invImage, invThumbnail, invPrice, invMiles, invColor, classificationId];
     const { rows } = await pool.query(query, values);
-    return rows[0];
+    return rows[0]; // Return the newly inserted row
   } catch (error) {
     console.error("Error adding new vehicle:", error);
     throw error;
