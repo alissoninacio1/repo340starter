@@ -19,6 +19,17 @@ router.get("/login", utilities.handleErrors(accountController.buildLogin));
 // Route to deliver registration view
 router.get("/signup", utilities.handleErrors(accountController.buildRegister));
 
+// Default route for account management page
+router.get('/', checkJWTToken, utilities.handleErrors(accountController.showAccountManagement));
+
+
+
+
+
+/* ***************************
+*  POST
+* ************************** */
+
 // Process the registration data
 router.post(
     "/register",
@@ -26,12 +37,6 @@ router.post(
     regValidate.checkLoginData(),
     utilities.handleErrors(accountController.registerAccount)
 )
-
-
-
-/* ***************************
- *  POST
- * ************************** */
 
 // // home redirection after login, or register
 // router.post("/login", (req, res) => {

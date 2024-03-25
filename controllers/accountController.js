@@ -162,8 +162,19 @@ async function accountLogin(req, res) {
   } catch (error) {
    return new Error('Access Forbidden')
   }
- }
+}
 
 
 
-module.exports = { buildLogin, buildRegister,registerAccount, accountLogin};
+// Function to render the account management view
+async function showAccountManagement(req, res) {
+  res.render('account/account-management', {
+      title: 'Account Management',
+      errors: req.flash('error'), 
+      messages: req.flash('info') 
+  });
+};
+
+
+
+module.exports = { buildLogin, buildRegister,registerAccount, accountLogin, showAccountManagement};
