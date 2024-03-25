@@ -20,7 +20,7 @@ router.get("/login", utilities.handleErrors(accountController.buildLogin));
 router.get("/signup", utilities.handleErrors(accountController.buildRegister));
 
 // Default route for account management page
-router.get('/', checkJWTToken, utilities.handleErrors(accountController.showAccountManagement));
+router.get('/', utilities.checkJWTToken, utilities.handleErrors(accountController.showAccountManagement));
 
 
 
