@@ -33,16 +33,16 @@ router.get('/', utilities.checkJWTToken, utilities.handleErrors(accountControlle
 // Process the registration data
 router.post(
   "/register",
-  regValidate.registationRules(), // Remove the parentheses
-  regValidate.checkLoginData(),
+  regValidate.registationRules, 
+  regValidate.checkLoginData,
   utilities.handleErrors(accountController.registerAccount)
 );
 
 // Process the login request
 router.post(
   "/login",
-  regValidate.loginRules(), // Remove the parentheses
-  regValidate.checkLoginData(),
+  regValidate.loginRules,
+  regValidate.checkLoginData,
   utilities.handleErrors(accountController.accountLogin)
 );
 
