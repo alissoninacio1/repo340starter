@@ -168,10 +168,12 @@ async function accountLogin(req, res) {
 
 // Function to render the account management view
 async function showAccountManagement(req, res) {
+  let nav = await utilities.getNav();
   res.render('account/account-management', {
-      title: 'Account Management',
-      errors: req.flash('error'), 
-      messages: req.flash('info') 
+    title: 'Account Management',
+    errors: req.flash('error'), 
+    messages: req.flash('info'),
+    nav: nav 
   });
 };
 

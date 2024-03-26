@@ -22,6 +22,8 @@ router.get("/signup", utilities.handleErrors(accountController.buildRegister));
 // Default route for account management page
 router.get('/', utilities.checkJWTToken, utilities.handleErrors(accountController.showAccountManagement));
 
+// Route for account management view
+router.get('/account', utilities.checkLogin, utilities.handleErrors(accountController.showAccountManagement));
 
 
 
@@ -33,7 +35,7 @@ router.get('/', utilities.checkJWTToken, utilities.handleErrors(accountControlle
 // Process the registration data
 router.post(
   "/register",
-  regValidate.registationRules, 
+  regValidate.registationRules(), 
   regValidate.checkLoginData,
   utilities.handleErrors(accountController.registerAccount)
 );
@@ -41,7 +43,7 @@ router.post(
 // Process the login request
 router.post(
   "/login",
-  regValidate.loginRules,
+  regValidate.loginRules(),
   regValidate.checkLoginData,
   utilities.handleErrors(accountController.accountLogin)
 );
