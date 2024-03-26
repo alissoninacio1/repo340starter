@@ -32,25 +32,19 @@ router.get('/', utilities.checkJWTToken, utilities.handleErrors(accountControlle
 
 // Process the registration data
 router.post(
-    "/register",
-    regValidate.registationRules(),
-    regValidate.checkLoginData(),
-    utilities.handleErrors(accountController.registerAccount)
-)
-
-// // home redirection after login, or register
-// router.post("/login", (req, res) => {
-//   // Redirect to home page upon clicking the login button
-//   //database authentication will be made later
-//   res.redirect('/');
-// });
+  "/register",
+  regValidate.registationRules(), // Remove the parentheses
+  regValidate.checkLoginData(),
+  utilities.handleErrors(accountController.registerAccount)
+);
 
 // Process the login request
 router.post(
   "/login",
-  regValidate.loginRules(),
+  regValidate.loginRules(), // Remove the parentheses
   regValidate.checkLoginData(),
   utilities.handleErrors(accountController.accountLogin)
-)
+);
+
 
 module.exports = router;
