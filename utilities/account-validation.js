@@ -15,7 +15,7 @@ validate.registationRules = () => {
         .escape()
         .notEmpty()
         .isLength({ min: 1 })
-        .withMessage("Please provide a first name."), // on error this message is sent.
+        .withMessage("Please provide a first name."), 
   
       // lastname is required and must be string
       body("account_lastname")
@@ -105,26 +105,32 @@ validate.loginRules = () => {
   ]
 }
 
+
+
 /*  **********************************
- *  Registration Data Validation
+ *  Login Data Validation
  * ********************************* */
 validate.checkLoginData = async (req, res, next) => {
-  const { account_email } = req.body
-  let errors = []
-  errors = validationResult(req)
+  const { account_email } = req.body;
+  let errors = validationResult(req);
   if (!errors.isEmpty()) {
-    let nav = await utilities.getNavigation()
-    res.render("account/login", {
-      errors,
-      title: "Login",
-      nav,
-      account_email,
-      
-    })
-    return
+    try {
+      // Fetch navigation data
+      let nav = await utilities.getNav();
+      res.render("account/login", {
+        errors,
+        title: "Login",
+        nav, // Pass the nav variable to the template
+        account_email,
+      });
+    } catch (error) {
+      console.error(error);
+      next(error);
+    }
+    return;
   }
-  next()
-}
+  next();
+};
 
   
 module.exports = validate

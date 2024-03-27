@@ -76,10 +76,26 @@ async function addNewVehicle(invMake, invModel, invYear, invDescription, invImag
 }
 
 
+
+// Function to delete inventory item
+async function deleteInventoryItem(inv_id) {
+  try {
+      const sql = 'DELETE FROM inventory WHERE inv_id = $1';
+      const data = await pool.query(sql, [inv_id]);
+      return data;
+  } catch (error) {
+      throw new Error('Delete Inventory Error: ' + error.message);
+  }
+}
+
+
+
+
 module.exports = {
   getClassifications, 
   getInventoryByClassificationId,
   retrieveVehicleDataById,
-  addNewVehicle
+  addNewVehicle,
+  deleteInventoryItem
 };
 

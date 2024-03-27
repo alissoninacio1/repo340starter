@@ -103,4 +103,13 @@ router.post('/add-inventory', async (req, res, next) => {
 
 
 
+
+// Get route to deliver the delete confirmation view
+router.get('/inventory/delete/:inv_id', invController.getDeleteConfirmation);
+
+// Post route to carry out the delete process
+router.post('/inventory/delete/:inv_id', invController.deleteInventoryItem);
+
+
+
 module.exports = router;
