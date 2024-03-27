@@ -2,6 +2,7 @@
     <div class="container">
         <h1 class="account-management-title">Welcome to your account management page!</h1>
         <p>You're logged in.</p>
+        <a class="link-for-edit-account" href="/#">Edit your account</a> 
         <% if (typeof messages !== 'undefined' && messages.length > 0) { %>
             <div class="flash-messages">
                 <% messages.forEach(function(message) { %>
@@ -25,8 +26,8 @@
 
 <div class="inventory-management-container">
     <div class="container">
-        <h2 class="inventory-management-title">Inventory Management</h2>
-        <a href="/inv">Manage your inventory</a> 
+        <h2 class="account-management-inventory-title">Inventory Management</h2>
+        <a class="link-for-inventory-management" href="/inv">Manage your inventory.</a> 
     </div>
 </div>
 

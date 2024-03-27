@@ -934,6 +934,22 @@ h1 {
   margin-bottom: 10px;
 }
 
+.account-management-inventory-title {
+  font-size: 0.9rem;
+  text-align: center;
+  font-family: var(--Roboto);
+
+}
+
+.link-for-inventory-management,
+.link-for-edit-account {
+  font-family: var(--Roboto);
+  display: block;
+  text-align: center;
+  font-size: 0.6rem;
+  padding: 0.4rem;
+}
+
 /* Responsive styles for mobile */
 @media (max-width: 600px) {
   .container {
@@ -949,7 +965,8 @@ h1 {
     font-size: 0.6rem;
   }
 
-  .account-management-title {
+  .account-management-title,
+  .account-management-inventory-title {
     padding: 0.4rem;
     font-size: 0.8rem !important;
   }
