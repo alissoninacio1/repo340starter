@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="container-management">
     <h1>Vehicle Management</h1>
 
@@ -12,6 +12,33 @@
 
 <a href="/inv/add-classification">Add New Classification</a>
 <a href="/inv/add-inventory">Add New Inventory Item</a>
+</div> -->
+
+
+<div class="container-management">
+  <h1>Vehicle Management</h1>
+
+  <% if (messages.length > 0) { %>
+      <div class="flash-message">
+          <% messages.forEach(function(message) { %>
+              <p><%= message %></p>
+          <% }); %>
+      </div>
+  <% } %>
+
+  <a href="/inv/add-classification">Add New Classification</a>
+  <a href="/inv/add-inventory">Add New Inventory Item</a>
+
+  <!-- Display Delete Options -->
+  <h2>Delete Inventory Item</h2>
+  <ul>
+      <% inventoryItems.forEach(function(item) { %>
+          <li>
+              <%= item.inv_make %> <%= item.inv_model %>
+              <form action="/inventory/delete/<%= item.inv_id %>" method="post">
+                  <button type="submit">Delete</button>
+              </form>
+          </li>
+      <% }); %>
+  </ul>
 </div>
-
-
