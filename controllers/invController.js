@@ -97,38 +97,38 @@ invController.addNewVehicle = async function (req, res, next) {
 // Function to deliver the delete confirmation view
 invController.getDeleteConfirmation = async (req, res, next) => {
   try {
-      const inv_id = req.params.inv_id;
-      const nav = await utilities.getNav(); // Assuming utilities.getNav() fetches navigation data
-      const inventoryItem = await inventoryModel.getInventoryItem(inv_id);
-      const name = inventoryItem.make + ' ' + inventoryItem.model;
-      res.render('inventory/delete-confirm', {
-          title: 'Confirm Deletion',
-          nav,
-          errors: null, // Assuming no errors for now
-          name,
-          inv_id
-      });
+    const inv_id = req.params.inv_id;
+    const nav = await utilities.getNav();
+    const inventoryItem = await invModel.getInventoryItem(inv_id); // Assuming you have a getInventoryItem function in your model
+    const name = inventoryItem.make + " " + inventoryItem.model;
+    res.render("inventory/delete-confirm", {
+      title: "Confirm Deletion",
+      nav,
+      errors: null, // Assuming no errors for now
+      name,
+      inv_id,
+    });
   } catch (error) {
-      console.error(error);
-      next(error);
+    console.error("Error rendering delete confirmation view:", error);
+    next(error);
   }
 };
 
 // Function to carry out the delete process
 invController.deleteInventoryItem = async (req, res, next) => {
   try {
-      const inv_id = parseInt(req.params.inv_id);
-      const result = await inventoryModel.deleteInventoryItem(inv_id);
-      if (result.rowCount > 0) {
-          req.flash('success', 'Inventory item deleted successfully.');
-          res.redirect('/inventory'); // Redirect to inventory management view
-      } else {
-          req.flash('error', 'Failed to delete inventory item.');
-          res.redirect('/inventory/delete/' + inv_id); // Redirect back to delete confirmation view
-      }
+    const inv_id = parseInt(req.params.inv_id);
+    const result = await invModel.deleteInventoryItem(inv_id);
+    if (result.rowCount > 0) {
+      req.flash("success", "Inventory item deleted successfully.");
+      res.redirect("/inventory"); 
+    } else {
+      req.flash("error", "Failed to delete inventory item.");
+      res.redirect("/inventory/delete/" + inv_id); 
+    }
   } catch (error) {
-      console.error(error);
-      next(error);
+    console.error("Error deleting inventory item:", error);
+    next(error);
   }
 };
 
