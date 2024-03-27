@@ -726,7 +726,7 @@ input:invalid {
 }
 
 .container-management h1 {
-  font-size: 24px;
+  font-size: 20px;;
   margin-bottom: 20px;
 }
 
@@ -753,6 +753,46 @@ input:invalid {
 
 .container-management a:hover {
   background-color: #f0f0f0;
+}
+
+/* Styling for the deletion section */
+.delete-section {
+  margin-top: 20px; /* Adjust spacing between add and delete sections */
+}
+
+.delete-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.delete-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.delete-section li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.delete-section form {
+  display: inline; /* Align delete buttons horizontally */
+}
+
+.delete-section button {
+  font-size: 14px !important;
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  background-color: #ff5555;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-section button:hover {
+  background-color: #cc0000;
 }
 
 
