@@ -66,13 +66,21 @@
         <% inventoryItems.forEach(function(item) { %>
         <li>
             <%= item.inv_make %> <%= item.inv_model %>
-            <form action="/inv/inventory/delete/<%= item.inv_id %>" method="post">
+            <form id="deleteForm_<%= item.inv_id %>" action="/inv/inventory/delete/<%= item.inv_id %>" method="post">
                 <input type="hidden" name="_method" value="DELETE">
-                <button type="submit">Delete</button>
+                <button type="button" onclick="confirmDelete('<%= item.inv_id %>')">Delete</button>
             </form>
         </li>
         <% }); %>
     </ul>
   </div>
 </div>
+
+<script>
+function confirmDelete(invId) {
+  if (confirm("Are you sure you want to delete this item?")) {
+    document.getElementById("deleteForm_" + invId).submit();
+  }
+}
+</script>
 
