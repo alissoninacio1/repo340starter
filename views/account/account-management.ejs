@@ -1,6 +1,7 @@
 <div class="account-management-container-view">
     <div class="container">
-        <h1>Welcome to your account management page!</h1>
+        <h1 class="account-management-title">Welcome to your account management page!</h1>
+        <p>You're logged in.</p>
         <% if (typeof messages !== 'undefined' && messages.length > 0) { %>
             <div class="flash-messages">
                 <% messages.forEach(function(message) { %>
@@ -19,6 +20,13 @@
                 <% }); %>
             </div>
         <% } %>
+    </div>
+</div>
+
+<div class="inventory-management-container">
+    <div class="container">
+        <h2 class="inventory-management-title">Inventory Management</h2>
+        <a href="/inv">Manage your inventory</a> 
     </div>
 </div>
 

@@ -906,6 +906,14 @@ input:invalid {
   padding: 20px;
 }
 
+.account-management-container-view p {
+  font-size: 18px; 
+  margin-top: 10px;
+  padding: 0.5rem; 
+  color: var(--blue-color); 
+  text-align: center;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -935,4 +943,16 @@ h1 {
   h1 {
       font-size: 24px;
   }
+
+  
+  .account-management-container-view .container p {
+    font-size: 0.6rem;
+  }
+
+  .account-management-title {
+    padding: 0.4rem;
+    font-size: 0.8rem !important;
+  }
+  
+  
 }
